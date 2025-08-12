@@ -1,26 +1,28 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # ViaCEP_API
 
-**Descrição:**
+
 Projeto simples em JavaScript que consome a API pública do ViaCEP para busca de endereços a partir de CEP (Código de Endereçamento Postal) no Brasil. É uma excelente forma de praticar requisições HTTP, tratamento de erros e manipulação de DOM.
 
-##  Tecnologias utilizadas
+## Tecnologias utilizadas
 - JavaScript (ES6+)
-- HTML5 e CSS3 (estrutura e estilos)
+- HTML5, CSS3
 - API ViaCEP (JSON)
-- Fetch API para comunicação com servidor
+- Fetch API
 
 ##  Como usar
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/ViaCEP_API.git
-
-2. Abra o arquivo index.html no navegador de sua preferência.
-3. Insira um CEP no formato xxxxx-xxx ou xxxxxxxx e clique em "Buscar".
+   git clone https://github.com/saarrr-alves/ViaCEP_API.git
+2. Abra o arquivo `index.html` no navegador de sua preferência.
+3. Insira um CEP no formato xxxxxxxx e clique fora do input de digitação do CEP.
 
 ## Funcionalidades
 - Busca de endereço (logradouro, bairro, cidade, estado) via CEP
 - Tratamento de CEPs inválidos ou não encontrados
 - Feedback amigável ao usuário (mensagem de erro, loading, etc.)
+- Validação de CEP com regex (apenas números e 8 dígitos)
 
 ## Exemplo de uso
 |  Entrada (CEP) |                     Saída                     |
@@ -33,11 +35,14 @@ Projeto simples em JavaScript que consome a API pública do ViaCEP para busca de
 ├── index.html
 ├── style.css
 └── script.js
+└── README.md
 ```
 
 ## Próximos passos (Roadmap)
-- Adicionar resposta visual com ícones ou feedback gráfico
-- Criar versão responsiva para mobile
+- Tratamento de loading UI com spinner ou animação suave
+- Adicição de botão de pesquisa de CEP de forma mais intuitiva
+- Estilo responsivo com layout mobile-first ou tailwind/bootstrap
+- Testes automatizados com Jest ou Cypress
 
 ## Como contribuir
 Contribuições são super bem-vindas!
