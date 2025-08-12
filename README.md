@@ -2,6 +2,7 @@
 
 # ViaCEP_API
 
+![Preview do ViaCEP_API](./preview.gif)
 
 Projeto simples em JavaScript que consome a API pública do ViaCEP para busca de endereços a partir de CEP (Código de Endereçamento Postal) no Brasil. É uma excelente forma de praticar requisições HTTP, tratamento de erros e manipulação de DOM.
 
@@ -36,6 +37,7 @@ Projeto simples em JavaScript que consome a API pública do ViaCEP para busca de
 ├── style.css
 └── script.js
 └── README.md
+└── preview.gif
 ```
 
 ## Próximos passos (Roadmap)
