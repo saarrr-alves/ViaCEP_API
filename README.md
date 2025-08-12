@@ -28,6 +28,7 @@ Projeto simples em JavaScript que consome a API pública do ViaCEP para busca de
 |   01001-000    |        Praça da Sé, Sé, São Paulo – SP        |
 |   00000-000    | CEP não encontrado, mensagem de erro exibida  |
 
+## Estrutura do Projeto
 ```pgsql
 ├── index.html
 ├── style.css
