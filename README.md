@@ -1,58 +1,95 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+# ViaCEP API
 
-# ViaCEP_API
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Licença MIT](https://img.shields.io/badge/Licença-MIT-green)
 
-![Preview do ViaCEP_API](./preview.gif)
+**Encontre endereços brasileiros com rapidez usando um CEP.**
 
-Projeto simples em JavaScript que consome a API pública do ViaCEP para busca de endereços a partir de CEP (Código de Endereçamento Postal) no Brasil. É uma excelente forma de praticar requisições HTTP, tratamento de erros e manipulação de DOM.
+[Sobre](#sobre) · [Tecnologias](#tecnologias) · [Como usar](#como-usar) · [Funcionalidades](#funcionalidades) · [Exemplo de uso](#exemplo-de-uso) · [Estrutura do projeto](#estrutura-do-projeto) · [Roadmap](#roadmap) · [Como contribuir](#como-contribuir) · [Licença](#licença)
 
-## Tecnologias utilizadas
-- JavaScript (ES6+)
-- HTML5, CSS3
-- API ViaCEP (JSON)
-- Fetch API
+<p align="center">
+   <img src="./preview.gif" alt="Demonstração do ViaCEP_API">
+</p>
 
-##  Como usar
+## Sobre
+
+O **ViaCEP API** é um projeto front-end simples e direto em JavaScript que consome a API pública do [ViaCEP](https://viacep.com.br/) para preencher e exibir endereços brasileiros a partir de um CEP.
+
+Ideal para estudar e praticar:
+- Requisições HTTP assíncronas com `fetch` e `async/await`
+- Manipulação do DOM
+- Validação de dados com Expressões Regulares (Regex)
+- Tratamento de erros e estados da interface
+
+## Tecnologias
+
+- **JavaScript (ES6+)** — Lógica da aplicação e manipulação do DOM
+- **Fetch API** — Consumo da API REST do ViaCEP
+- **HTML5** — Estrutura semântica da página
+- **CSS3** — Estilização e feedback visual
+- **API ViaCEP** — Serviço público e gratuito de consulta de CEPs em JSON
+
+## Como usar
+
 1. Clone o repositório:
    ```bash
    git clone https://github.com/saarrr-alves/ViaCEP_API.git
-2. Abra o arquivo `index.html` no navegador de sua preferência.
-3. Insira um CEP no formato xxxxxxxx e clique fora do input de digitação do CEP.
+   cd ViaCEP_API
+   ```
+2. Acesse a pasta do projeto e abra o arquivo index.html no seu navegador (ou utilize uma extensão como Live Server).
+
+3. Digite um CEP válido (8 dígitos numéricos) e clique fora do campo (blur) para realizar a consulta.
 
 ## Funcionalidades
-- Busca de endereço (logradouro, bairro, cidade, estado) via CEP
-- Tratamento de CEPs inválidos ou não encontrados
-- Feedback amigável ao usuário (mensagem de erro, loading, etc.)
-- Validação de CEP com regex (apenas números e 8 dígitos)
+
+- Consulta completa de endereço: Retorna logradouro, bairro, cidade e estado (UF).
+- Validação com Regex: Garante que o CEP contenha exatamente 8 números.
+- Tratamento de exceções: Identifica CEPs com formato inválido ou inexistentes na base.
+- Feedback visual: Exibe mensagens claras de carregamento e erro para o usuário.
 
 ## Exemplo de uso
-|  Entrada (CEP) |                     Saída                     |
-|----------------|-----------------------------------------------|
-|   01001-000    |        Praça da Sé, Sé, São Paulo – SP        |
-|   00000-000    | CEP não encontrado, mensagem de erro exibida  |
 
-## Estrutura do Projeto
-```pgsql
+| Entrada (CEP) | Saída esperada |
+|---------------|----------------|
+| 01001-000 | Praça da Sé, Sé, São Paulo - SP    |
+| 00000-000 | Mensagem de erro informando que o CEP não foi encontrado |
+| 123 / abc | Mensagem de validação/erro para CEP inválido |
+
+## Estrutura do projeto
+
+```
+ViaCEP_API/
 ├── index.html
 ├── style.css
-└── script.js
-└── README.md
+├── script.js
+├── README.md
 └── preview.gif
 ```
 
-## Próximos passos (Roadmap)
-- Tratamento de loading UI com spinner ou animação suave
-- Adicição de botão de pesquisa de CEP de forma mais intuitiva
-- Estilo responsivo com layout mobile-first ou tailwind/bootstrap
-- Testes automatizados com Jest ou Cypress
+## Roadmap
+
+- [ ] Adicionar spinner ou animação de carregamento na interface
+- [ ] Incluir botão explícito de busca além do evento ao sair do campo
+- [ ] Implementar layout responsivo (mobile-first, CSS Grid/Flexbox ou framework)
+- [ ] Criar testes automatizados com Jest ou Cypress
 
 ## Como contribuir
-Contribuições são super bem-vindas!
 
-1. Fork este repositório.
-2. Crie uma branch para sua feature ou correção (git checkout -b minha-feature).
-3. Faça suas alterações, teste e commit (git commit -m "Descrição do que fez").
-4. Abra um Pull Request — vamos adorar revisar junto!
+Contribuições são sempre bem-vindas! Para colaborar:
+
+1. Faça um fork deste repositório.
+2. Crie uma branch para a sua melhoria ou correção:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça suas alterações e registre o commit:
+   ```bash
+   git commit -m "feat: adiciona nova funcionalidade"
+   ```
+4. Envie para o seu fork (git push origin minha-feature) e abra um Pull Request.
 
 ## Licença
-MIT License — sinta-se à vontade para usar, modificar e compartilhar este projeto.
+
+Este projeto está sob a licença MIT. Sinta-se à vontade para usar, modificar e compartilhar.
