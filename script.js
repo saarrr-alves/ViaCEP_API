@@ -2,13 +2,27 @@
 function preencherCardComLocalStorage() {
     const card = document.getElementById("card");
     card.innerHTML = `
-        <p>CEP: ${localStorage.getItem("cep") || ''}</p>
-        <p>Logradouro: ${localStorage.getItem("logradouro") || ''}</p>
-        <p>Bairro: ${localStorage.getItem("bairro") || ''}</p>
-        <p>Cidade: ${localStorage.getItem("cidade") || ''}</p>
-        <p>Estado: ${localStorage.getItem("estado") || ''}</p>
-        <p>Número: ${localStorage.getItem("numero") || ''}</p>
+        <div class="card-header flex flex-col justify-content-between">
+            <div class="drawer-header">
+                <h3 class="drawer-title">Endereço Cadastrado</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+            </div>
+            <p>CEP: ${localStorage.getItem("cep") || ''}</p>
+            <p>Logradouro: ${localStorage.getItem("logradouro") || ''}</p>
+            <p>Bairro: ${localStorage.getItem("bairro") || ''}</p>
+            <p>Cidade: ${localStorage.getItem("cidade") || ''}</p>
+            <p>Estado: ${localStorage.getItem("estado") || ''}</p>
+            <p>Número: ${localStorage.getItem("numero") || ''}</p>
+        </div>
+        <button class="btn-solid theme-secondary" id="clear-storage">Limpar Dados</button>
     `;
+        if (!localStorage.getItem("cep")) {
+            card.innerHTML = `
+                <div class="card-header align-items-center justify-content-center">
+                    <p>Preencha o CEP para ver os dados do endereço.</p>
+                </div>
+            `; // Mensagem padrão quando não há dados
+        }
 }
 
 // Chamar a função para preencher o card assim que a página é carregada
@@ -54,8 +68,9 @@ document.getElementById("cep").addEventListener("blur", (evento) => {
         .catch(error => console.error("Erro ao buscar CEP:", error));
 });
 
-// Evento para o botão "Cadastrar"
-document.getElementById("endereco-form").addEventListener("click", () => {
+// Evento para o botão de submit "Cadastrar"
+document.getElementById("submit").addEventListener("click", (evento) => {
+    evento.preventDefault();
     // Pega os valores atuais do formulário
     const numero = document.getElementById("numero").value.trim();
     const logradouro = document.getElementById("logradouro").value.trim();
@@ -74,4 +89,11 @@ document.getElementById("endereco-form").addEventListener("click", () => {
     preencherCardComLocalStorage();
     
     alert("Dados salvos com sucesso!");
+});
+
+// Evento para o botão de limpar dados
+document.getElementById("clear-storage").addEventListener("click", () => {
+    localStorage.clear();
+    preencherCardComLocalStorage();
+    alert("Dados limpos com sucesso!");
 });
