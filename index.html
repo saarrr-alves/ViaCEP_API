@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Endereço</title>
+    <title>ViaCEP - Seu Consultor de CEP</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MKn5NWVBEuQXJE7TSKSgPUmMiSCmVTfCsR+VSSeQpHnoyJQZZFn/kBn+Ht5jZDPQ" crossorigin="anonymous">
+
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Cadastro de Endereço</h1>
+    <div class="container-fluid min-vh-100 d-flex flex-column position-relative p-3">
 
-        <form>
-            <label for="cep">CEP:</label>
-            <input type="number" name="cep" id="cep" required>
+        <div class="left position-fixed top-0 start-0 p-3 bg-body rounded z-3">
+            <button class="btn-solid theme-secondary" type="button" data-bs-toggle="drawer" data-bs-target="#card" aria-expanded="false">
+                Endereços Cadastrados
+            </button>
+            <dialog id="card" class="drawer drawer-start col-4 mt-4 p-4 rounded shadow-sm bg-1">
+                <!-- O conteúdo do cartão será preenchido dinamicamente pelo JavaScript -->
+            </dialog>
+        </div>
 
-            <label for="logradouro">Logradouro:</label>
-            <input type="text" name="logradouro" id="logradouro" required>
+        <div class="form-field w-100 m-auto p-4 rounded shadow-sm bg-1" style="max-width: 540px;">
+            <h1 class="fs-4xl">Cadastro de Endereço</h1>
 
-            <label for="bairro">Bairro:</label>
-            <input type="text" name="bairro" id="bairro" required>
+            <form id="form" class="mt-4">
+                <label for="cep" class="form-label">CEP:</label>
+                <input type="number" name="cep" id="cep" class="form-control" placeholder="00000-000" required>
 
-            <label for="cidade">Cidade:</label>
-            <input type="text" name="cidade" id="cidade" required>
+                <label for="logradouro" class="form-label">Logradouro:</label>
+                <input type="text" name="logradouro" id="logradouro" class="form-control" placeholder="Digite o logradouro" required>
 
-            <label for="estado">Estado:</label>
-            <input type="text" name="estado" id="estado" required>
+                <label for="bairro" class="form-label">Bairro:</label>
+                <input type="text" name="bairro" id="bairro" class="form-control" placeholder="Digite o bairro" required>
 
-            <label for="numero">Número:</label>
-            <input type="number" name="numero" id="numero" required>
+                <label for="cidade" class="form-label">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" class="form-control" placeholder="Digite a cidade" required>
 
-            <button id="endereco-form">Cadastrar</button>
-        </form>
-    </div>
+                <label for="estado" class="form-label">Estado:</label>
+                <input type="text" name="estado" id="estado" class="form-control" placeholder="Digite o estado" required>
 
-    <div class="container">
-        <h2>Endereço Salvo</h2>
-        <div id="card">
+                <label for="numero" class="form-label">Número:</label>
+                <input type="number" name="numero" id="numero" class="form-control" placeholder="Digite o número" required>
+
+                <div class="py-6"><!--spacer--></div>
+
+                <button type="submit" id="submit" class="btn theme-primary btn-solid rounded-pill mt-4 w-100">Cadastrar</button>
+            </form>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-+PW0IDVGGwmpaBQvcXY+W0BcpHpITFB3dSfSoGvDdHtLbrLpSbpGcvtQRM/BJpz+" crossorigin="anonymous"></script>
 </body>
 </html>
