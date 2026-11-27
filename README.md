@@ -28,7 +28,8 @@ Ideal para estudar e praticar:
 - **JavaScript (ES6+)** — Lógica da aplicação e manipulação do DOM
 - **Fetch API** — Consumo da API REST do ViaCEP
 - **HTML5** — Estrutura semântica da página
-- **CSS3** — Estilização e feedback visual
+- **CSS3** — Estilização dos rótulos e espaçamento do formulário, com ajuste responsivo para telas maiores.
+- **Bootstrap** — Framework CSS usado para aplicar estilos e componentes prontos da interface.
 - **API ViaCEP** — Serviço público e gratuito de consulta de CEPs em JSON
 
 ## Como usar
